@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Install Linux Mint
+Name=Instalar Emmi Linux
 GenericName=Live Installer
-Comment=Install the operating system to disk
+Comment=Instalar sistema operacional no HD
 Exec=gksudo /usr/bin/live-installer
 Icon=live-installer
 Terminal=False
