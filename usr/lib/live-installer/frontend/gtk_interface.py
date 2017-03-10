@@ -371,11 +371,11 @@ class InstallerWindow:
             self.window.set_title((_("%s Installer") % self.installer.get_distribution_name()))
 
         # about you
-        self.wTree.get_widget("label_your_name").set_markup("<b>%s</b>" % _("Your full name"))
+        self.wTree.get_widget("label_your_name").set_markup("<b>%s</b>" % _("Seu nome completo"))
         self.wTree.get_widget("label_your_name_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Please enter your full name."))
-        self.wTree.get_widget("label_username").set_markup("<b>%s</b>" % _("Your username"))
+        self.wTree.get_widget("label_username").set_markup("<b>%s</b>" % _("Nome de usuário"))
         self.wTree.get_widget("label_username_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("This is the name you will use to log in to your computer."))
-        self.wTree.get_widget("label_choose_pass").set_markup("<b>%s</b>" % _("Your password"))
+        self.wTree.get_widget("label_choose_pass").set_markup("<b>%s</b>" % _("Sua senha"))
         self.wTree.get_widget("label_pass_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Please enter your password twice to ensure it is correct."))
         self.wTree.get_widget("label_hostname").set_markup("<b>%s</b>" % _("Hostname"))
         self.wTree.get_widget("label_hostname_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("This hostname will be the computer's name on the network."))
@@ -384,7 +384,7 @@ class InstallerWindow:
         self.wTree.get_widget("checkbutton_autologin").set_label(_("Log in automatically"))
         self.wTree.get_widget("checkbutton_autologin").connect("toggled", self.assign_autologin)
                 
-        self.wTree.get_widget("face_label").set_markup("<b>%s</b>" % _("Your picture"))
+        self.wTree.get_widget("face_label").set_markup("<b>%s</b>" % _("Sua imagem"))
         self.wTree.get_widget("face_description").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("This picture represents your user account. It is used in the login screen and a few other places."))
 
         self.face_button.set_tooltip_text(_("Click to change your picture"))
@@ -396,7 +396,7 @@ class InstallerWindow:
         
         # grub
         self.wTree.get_widget("label_grub").set_markup("<b>%s</b>" % _("Bootloader"))
-        self.wTree.get_widget("checkbutton_grub").set_label(_("Install GRUB"))
+        self.wTree.get_widget("checkbutton_grub").set_label(_("Instalar GRUB"))
         self.wTree.get_widget("label_grub_help").set_label(_("GRUB is a bootloader used to load the Linux kernel."))
         
         # keyboard page
