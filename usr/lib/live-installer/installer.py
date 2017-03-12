@@ -273,7 +273,7 @@ class InstallerEngine:
         print " --> Removing live packages"
         our_current += 1
         self.update_progress(total=our_total, current=our_current, message=_("Removing live configuration (packages)"))
-        with open("/lib/live/mount/medium/live/filesystem.packages-remove", "r") as fd:
+        with open("/opt/filesystem.packages-remove", "r") as fd:
             line = fd.read().replace('\n', ' ')
         self.do_run_in_chroot("apt-get remove --purge --yes --force-yes %s" % line)
 
