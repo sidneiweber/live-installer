@@ -295,6 +295,7 @@ class InstallerEngine:
         fp.close()
         self.do_run_in_chroot("cat /tmp/.passwd | chpasswd")
         os.system("rm -f /target/tmp/.passwd")
+        self.do_run_in_chroot("userdel -r emmi")
 
         # Set autologin for user if they so elected
         if setup.autologin:
@@ -493,9 +494,10 @@ class InstallerEngine:
             while (not self.do_check_grub(our_total, our_current)):
                 self.do_configure_grub(our_total, our_current)
                 grub_retries = grub_retries + 1
-                if grub_retries >= 5:
-                    self.error_message(message=_("WARNING: The grub bootloader was not configured properly! You need to configure it manually."))
-                    break
+                ###### ERRO GRUB
+                #if grub_retries >= 5:
+                #    self.error_message(message=_("WARNING: The grub bootloader was not configured properly! You need to configure it manually."))
+                #    break
 
         # recreate initramfs (needed in case of skip_mount also, to include things like mdadm/dm-crypt/etc in case its needed to boot a custom install)
         print " --> Configuring Initramfs"
