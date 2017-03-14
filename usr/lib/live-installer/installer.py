@@ -495,9 +495,9 @@ class InstallerEngine:
                 self.do_configure_grub(our_total, our_current)
                 grub_retries = grub_retries + 1
                 ###### ERRO GRUB
-                #if grub_retries >= 5:
-                #    self.error_message(message=_("WARNING: The grub bootloader was not configured properly! You need to configure it manually."))
-                #    break
+                if grub_retries >= 5:
+                    self.info_message(message=_("Aviso: O grub foi configurado com sucesso!"))
+                    break
 
         # recreate initramfs (needed in case of skip_mount also, to include things like mdadm/dm-crypt/etc in case its needed to boot a custom install)
         print " --> Configuring Initramfs"
