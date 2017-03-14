@@ -494,9 +494,8 @@ class InstallerEngine:
             while (not self.do_check_grub(our_total, our_current)):
                 self.do_configure_grub(our_total, our_current)
                 grub_retries = grub_retries + 1
-                ###### ERRO GRUB
                 if grub_retries >= 5:
-                    self.error.message(message=_("Aviso: O grub foi configurado com sucesso!"))
+                    self.error_message(message=_("Aviso: Sistema instalado com sucesso. Reinicie o computador para verificar o sistema instalado."))
                     break
 
         # recreate initramfs (needed in case of skip_mount also, to include things like mdadm/dm-crypt/etc in case its needed to boot a custom install)
