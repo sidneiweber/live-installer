@@ -1,4 +1,3 @@
-#from dialogs import MessageDialog, QuestionDialog, ErrorDialog, WarningDialog
 import os
 import re
 import subprocess
