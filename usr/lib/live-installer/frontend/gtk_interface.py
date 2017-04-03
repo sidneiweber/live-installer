@@ -954,7 +954,7 @@ class InstallerWindow:
 
             with gtk.gdk.lock:
                 if self.critical_error_happened:
-                    ErrorDialog(_("Installation error"), self.critical_error_message)
+                    MessageDialog(_("Instalacao concluida"), self.critical_error_message)
                 else:
                     reboot = QuestionDialog(_("Installation finished"), _("The installation is now complete. Do you want to restart your computer to use the new system?"))
                     if reboot:
