@@ -1,5 +1,4 @@
-from dialogs import MessageDialog, QuestionDialog, ErrorDialog, WarningDialog
-
+#from dialogs import MessageDialog, QuestionDialog, ErrorDialog, WarningDialog
 import os
 import re
 import subprocess
@@ -498,10 +497,7 @@ class InstallerEngine:
                 self.do_configure_grub(our_total, our_current)
                 grub_retries = grub_retries + 1
                 if grub_retries >= 5:
-                    reboot = QuestionDialog(_("Instalacao finalizada"), _("A instalacao esta finalizada. Gostaria de reiniciar para usar seu novo sistema?"))
-                    if reboot:
-                        os.system('reboot')
-                    #self.error_message(message=_("Aviso: Sistema instalado com sucesso. Reinicie o computador para verificar o sistema instalado."))
+                    self.error_message(message=_("Aviso: Sistema instalado com sucesso. Reinicie o computador para verificar o sistema instalado."))
                     break
 
         # recreate initramfs (needed in case of skip_mount also, to include things like mdadm/dm-crypt/etc in case its needed to boot a custom install)
