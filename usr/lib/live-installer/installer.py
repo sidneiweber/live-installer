@@ -1,3 +1,5 @@
+from dialogs import MessageDialog, QuestionDialog, ErrorDialog, WarningDialog
+
 import os
 import re
 import subprocess
@@ -8,6 +10,7 @@ import stat
 import commands
 import sys
 import parted
+
 
 gettext.install("live-installer", "/usr/share/linuxmint/locale")
 
