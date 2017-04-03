@@ -495,7 +495,10 @@ class InstallerEngine:
                 self.do_configure_grub(our_total, our_current)
                 grub_retries = grub_retries + 1
                 if grub_retries >= 5:
-                    self.error_message(message=_("Aviso: Sistema instalado com sucesso. Reinicie o computador para verificar o sistema instalado."))
+                    reboot = QuestionDialog(_("Instalação finalizada"), _("A instalaço está finalizada. Gostaria de reiniciar para usar seu novo sistema?"))
+                    if reboot:
+                        os.system('reboot')
+                    #self.error_message(message=_("Aviso: Sistema instalado com sucesso. Reinicie o computador para verificar o sistema instalado."))
                     break
 
         # recreate initramfs (needed in case of skip_mount also, to include things like mdadm/dm-crypt/etc in case its needed to boot a custom install)
